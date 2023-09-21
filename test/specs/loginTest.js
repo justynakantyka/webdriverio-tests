@@ -15,7 +15,7 @@ describe('Login Page test', () => {
         await LoginPage.open();
 
         await LoginPage.login('locked_out_user', 'secret_sauce');
-        const errorMessage = await LoginPage.error;
+        const errorMessage = LoginPage.error;
         await expect(errorMessage).toHaveText('Epic sadface: Sorry, this user has been locked out.');
     });
 
@@ -23,7 +23,7 @@ describe('Login Page test', () => {
         await LoginPage.open();
 
         await LoginPage.login('wrong_username', 'secret_sauce');
-        const errorMessage = await LoginPage.error;
+        const errorMessage = LoginPage.error;
         await expect(errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
     });
 
@@ -31,14 +31,14 @@ describe('Login Page test', () => {
         await LoginPage.open();
 
         await LoginPage.login('standard_user', 'wrong_password');
-        const errorMessage = await LoginPage.error;
+        const errorMessage = LoginPage.error;
         await expect(errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
     });
 
     it('should display error when user tries to access inventory page without logging in', async () => {
         await InventoryPage.open();
 
-        const errorMessage = await LoginPage.error;
-        await expect(errorMessage).toHaveText('Epic sadface: You can only access "/inventory.html" when you are logged in.');
+        const errorMessage = LoginPage.error;
+        await expect(errorMessage).toHaveText(`Epic sadface: You can only access '/inventory.html' when you are logged in.`);
     });
 })
