@@ -23,4 +23,29 @@ describe('Inventory Page test', () => {
             await expect(item).toBeDisplayed();
         }
     });
+
+    it('should verify redirection to page inventory after clicking All Items', async() => {
+        await InventoryPage.openMenuButton();
+        await InventoryPage.clickMenuItem('#inventory_sidebar_link');
+        await expect(browser).toHaveUrl(`${baseUrl}/inventory.html`);
+    });
+
+    it('should verify redirection to page saucelabs.com after clicking About', async() => {
+        await InventoryPage.openMenuButton();
+        await InventoryPage.clickMenuItem('#about_sidebar_link');
+        await expect(browser).toHaveUrl('https://saucelabs.com/');
+    });
+
+    it('should verify redirection to login page after clicking Logout', async() => {
+        await InventoryPage.openMenuButton();
+        await InventoryPage.clickMenuItem('#logout_sidebar_link');
+        await expect(browser).toHaveUrl(`${baseUrl}/`);
+    });
+
+    it('should verify if menu is closed after clicking X', async() => {
+        await InventoryPage.openMenuButton();
+        await InventoryPage.clickCloseButton('#logout_sidebar_link');
+        await InventoryPage.menu.waitForDisplayed({reverse: true});
+        await expect(InventoryPage.menu).not.toBeDisplayed();
+    });
 });
