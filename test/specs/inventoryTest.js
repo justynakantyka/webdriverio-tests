@@ -22,7 +22,7 @@ describe('Inventory Page test', () => {
         await expect(removeButtonText).toHaveText('Remove');
     });
 
-    it('should verify badge 1 is removed from shopping basket after clicking "Remove" button', async() => {
+    it('should verify if badge 1 is removed from shopping basket after clicking "Remove" button', async() => {
         await InventoryPage.clickAddToCartButton();
         await InventoryPage.addToCartBackpackButton.waitForDisplayed({reverse: true});
         await InventoryPage.clickRemoveFromCartButton();
