@@ -8,8 +8,12 @@ class InventoryPage extends Page {
         return $('#menu_button_container .bm-burger-button');
     }
 
-    get addToCardBackpackButton() {
+    get addToCartBackpackButton() {
         return $('[data-test="add-to-cart-sauce-labs-backpack"]');
+    }
+
+    get removeBackpackButton() {
+        return $('[data-test="remove-sauce-labs-backpack"]');
     }
 
     get shoppingCartBadge() {
@@ -18,6 +22,11 @@ class InventoryPage extends Page {
 
     async openMenuButton() {
         await this.menuButton.click();
+    }
+
+    async clickAddToCartButton() {
+        const addToCartButton = this.addToCartBackpackButton;
+        await addToCartButton.click();
     }
 
     open () {
