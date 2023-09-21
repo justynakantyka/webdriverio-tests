@@ -42,6 +42,10 @@ Login page tests:
 ```
 npm run wdio -- --spec ./test/specs/loginTest.js
 ```
+Navigation menu tests:
+```
+npm run wdio -- --spec ./test/specs/navigationTest.js
+```
 Inventory page tests:
 ```
 npm run wdio -- --spec ./test/specs/inventoryTest.js
