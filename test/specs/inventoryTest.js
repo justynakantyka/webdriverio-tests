@@ -1,7 +1,6 @@
 import { expect } from '@wdio/globals';
 import LoginPage from '../pageobjects/login.page';
 import InventoryPage from '../pageobjects/inventory.page';
-import * as menuItems from '../enums/menuItems';
 
 describe('Inventory Page test', () => {
     beforeEach(async() => {
