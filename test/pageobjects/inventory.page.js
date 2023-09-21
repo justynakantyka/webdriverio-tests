@@ -26,7 +26,14 @@ class InventoryPage extends Page {
 
     async clickAddToCartButton() {
         const addToCartButton = this.addToCartBackpackButton;
+        await addToCartButton.waitForClickable();
         await addToCartButton.click();
+    }
+
+    async clickRemoveFromCartButton() {
+        const removeFromCartButton = this.removeBackpackButton;
+        await removeFromCartButton.waitForClickable();
+        await removeFromCartButton.click();
     }
 
     open () {

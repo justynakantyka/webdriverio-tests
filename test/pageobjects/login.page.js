@@ -25,8 +25,12 @@ class LoginPage extends Page {
         await this.btnSubmit.click();
     }
 
-    setUserCookie() {
-        return super.setUserCookie();
+    async setUserCookie() {
+        await super.setUserCookie();
+    }
+
+    async cleanLocalStorage() {
+        await super.cleanLocalStorage();
     }
 
     open () {
