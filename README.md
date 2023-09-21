@@ -9,7 +9,7 @@ This repository contains test suites developed with WebdriverIO 8, created to pr
 * [Debugging in VSCode](#debugging-in-vscode)
 
 ## Requirements
-- Node.js 18 or Node.js 16 installed (To check node version run: `node -v` or `nvm version` (if you are using nvm))
+- Node.js 20, 18 or 16 installed (To check node version run: `node -v` or `nvm version` (if you are using nvm))
 - Npm installed (It should already be installed when you install Node.js. To check, run: `npm -v`)
 - Java installed and added to your path (https://www.java.com/en/download/)
 - Chrome browser installed
