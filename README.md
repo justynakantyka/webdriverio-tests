@@ -1,6 +1,6 @@
 # webdriverio-tests
 
-This repository contains test suites developed with WebdriverIO 8, specifically crafted to practice test automation skills on the saucelab.com website.
+This repository contains test suites developed with WebdriverIO 8, created to practice test automation skills on the saucelab.com website.
 
 ## Table of contents
 * [Requirements](#requirements)
