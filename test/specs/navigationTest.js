@@ -27,25 +27,25 @@ describe('Navigation Menu test', () => {
 
     it('should verify redirection to page inventory after clicking All Items', async() => {
         await InventoryPage.openMenuButton();
-        await NavigationMenu.clickMenuItem('#inventory_sidebar_link');
+        await NavigationMenu.clickMenuItem(NavigationMenu.allItemsLink);
         await expect(browser).toHaveUrl(`${baseUrl}/inventory.html`);
     });
 
     it('should verify redirection to page saucelabs.com after clicking About', async() => {
         await InventoryPage.openMenuButton();
-        await NavigationMenu.clickMenuItem('#about_sidebar_link');
+        await NavigationMenu.clickMenuItem(NavigationMenu.aboutLink);
         await expect(browser).toHaveUrl('https://saucelabs.com/');
     });
 
     it('should verify redirection to login page after clicking Logout', async() => {
         await InventoryPage.openMenuButton();
-        await NavigationMenu.clickMenuItem('#logout_sidebar_link');
+        await NavigationMenu.clickMenuItem(NavigationMenu.logoutLink);
         await expect(browser).toHaveUrl(`${baseUrl}/`);
     });
 
     it('should verify if menu is closed after clicking X', async() => {
         await InventoryPage.openMenuButton();
-        await NavigationMenu.clickCloseButton('#logout_sidebar_link');
+        await NavigationMenu.clickCloseButton(NavigationMenu.logoutLink);
         await NavigationMenu.menu.waitForDisplayed({reverse: true});
         await expect(NavigationMenu.menu).not.toBeDisplayed();
     });

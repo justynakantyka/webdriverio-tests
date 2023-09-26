@@ -7,8 +7,21 @@ class NavigationMenuPage extends Page {
     get menu() {
         return $('.bm-menu');
     }
+
     get menuButton() {
         return $('#menu_button_container .bm-burger-button');
+    }
+
+    get allItemsLink() {
+        return $('#inventory_sidebar_link');
+    }
+
+    get aboutLink() {
+        return $('#about_sidebar_link');
+    }
+
+    get logoutLink() {
+        return $('#logout_sidebar_link');
     }
 
     get closeButton() {
@@ -20,8 +33,8 @@ class NavigationMenuPage extends Page {
     }
 
     async clickMenuItem(menuItem) {
-        await $(menuItem).waitForClickable();
-        await $(menuItem).click();
+        await menuItem.waitForClickable();
+        await menuItem.click();
     }
 
     async clickCloseButton(){
