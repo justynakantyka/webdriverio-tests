@@ -36,6 +36,10 @@ class InventoryPage extends Page {
         await removeFromCartButton.click();
     }
 
+    async cleanCartContent() {
+        await super.cleanLocalStorage('cart-contents');
+    }
+
     open () {
         return super.open('inventory.html');
     }

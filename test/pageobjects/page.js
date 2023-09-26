@@ -10,8 +10,8 @@ module.exports = class Page {
         browser.refresh();
     }
 
-    async cleanLocalStorage() {
-        await browser.execute('window.localStorage.clear()');
+    async cleanLocalStorage(item) {
+        await browser.execute(`window.localStorage.removeItem('${item}')`);
     }
 
     open (path) {

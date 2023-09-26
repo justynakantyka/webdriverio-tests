@@ -31,6 +31,6 @@ describe('Inventory Page test', () => {
     });
 
     afterEach(async() => {
-        await LoginPage.cleanLocalStorage();
+        await InventoryPage.cleanCartContent();
     })
 });

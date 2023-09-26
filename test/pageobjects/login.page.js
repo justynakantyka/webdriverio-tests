@@ -29,10 +29,6 @@ class LoginPage extends Page {
         await super.setUserCookie();
     }
 
-    async cleanLocalStorage() {
-        await super.cleanLocalStorage();
-    }
-
     open () {
         return super.open('');
     }
