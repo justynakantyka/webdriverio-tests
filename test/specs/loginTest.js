@@ -15,10 +15,9 @@ describe('Login Page test', () => {
 
     it('should display error for blocked user', async () => {
         const BLOCKED_USERNAME = 'locked_out_user';
-        const BLOCKED_PASSWORD = 'secret_sauce';
         await LoginPage.open();
 
-        await LoginPage.login(BLOCKED_USERNAME, BLOCKED_PASSWORD);
+        await LoginPage.login(BLOCKED_USERNAME, VALID_PASSWORD);
         const errorMessage = LoginPage.error;
         await expect(errorMessage).toHaveText('Epic sadface: Sorry, this user has been locked out.');
     });
